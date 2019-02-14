@@ -1,6 +1,6 @@
-from jacq3 import *
+from jacq3g import *
 
-loom = Jacq3()
+loom = Jacq3G()
 connection = Comm()
 
 print('loom length: ', loom.length())

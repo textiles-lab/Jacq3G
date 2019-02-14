@@ -12,7 +12,7 @@ def toBits(arr):
     assert(len(arr) == 0)
     return bytearray(out)
 
-class Jacq3:
+class Jacq3G:
     def __init__(self):
         self.frames = [False] * 360
 
