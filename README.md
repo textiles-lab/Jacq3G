@@ -1,4 +1,4 @@
-# loom
+# Jacq3
 A tiny driver to talk to the AVL Jacq3 loom over usb-serial connection
 
 ```python
