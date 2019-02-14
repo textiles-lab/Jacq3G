@@ -5,7 +5,7 @@ A tiny driver to talk to the AVL Jacq3 loom over usb-serial connection
 connection = Comm()  # sets up a usb-serial connection
 connection.initialize() 
  
-loom = Jacq3() # holds data that can be sent using Comm()
+loom = Jacq3G() # holds data that can be sent using Comm()
  
 for i in range(0, loom.length, 4):
   loom.setPick(i, True) # pick i
