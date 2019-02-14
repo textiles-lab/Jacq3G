@@ -2,6 +2,8 @@
 A tiny driver to talk to the AVL Jacq3 loom over usb-serial connection
 
 ```python
+from jacq3g import *
+
 connection = Comm()  # sets up a usb-serial connection
 connection.initialize() 
  
