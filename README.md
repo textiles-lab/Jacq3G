@@ -19,5 +19,14 @@ connection.send(loom.getNullPick()) #clear all picks
 connection.shutdown()
 ```
 
+## send-pick
+
+Send-pick is a small utility that uses Jacq3G to send a single pick (passed as a string of ones and zeroes on the command line) to the loom. You can use it (along with various other shell utilities) to easily pipe patterns to the loom:
+
+```
+cat twill.txt | xargs -n1 ./send-pick.py
+```
+
+## TODO
 todo : Move Comm, Jacq3 in one class? Some helpers for binary patterns ? More documentation ?
  
