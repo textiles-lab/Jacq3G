@@ -4,10 +4,10 @@ import sys
 
 #map pick locations to needle numbers; customize for your current warping:
 locations = []
-for i in range(117, 148):
+for i in range(117, 170):
 	locations.append(i)
-for i in range(148+1, 240):
-	locations.append(i+1)
+for i in range(170+1, 240):
+	locations.append(i)
 assert(len(locations) == 122)
 
 if len(sys.argv) != 2:
