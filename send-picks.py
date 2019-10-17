@@ -4,11 +4,15 @@ import sys
 
 #map pick locations to needle numbers; customize for your current warping:
 locations = []
-for i in range(117, 170):
+#for i in range(117, 170):
+#	locations.append(i)
+#for i in range(170+1, 240):
+#	locations.append(i)
+#assert(len(locations) == 122)
+
+for i in range(120, 240):
 	locations.append(i)
-for i in range(170+1, 240):
-	locations.append(i)
-assert(len(locations) == 122)
+assert(len(locations) == 120)
 
 if len(sys.argv) != 2:
 	sys.exit('Usage:\n\tsend-pick.py <picks.txt>\n where each line of picks.txt looks like \'00110101000101010...00101\', with exactly ' + str(len(locations)) + ' digits in the line.')
