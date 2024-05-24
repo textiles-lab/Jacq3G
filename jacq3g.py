@@ -37,7 +37,7 @@ class Jacq3G:
 class Comm:
     # better port identification
     def __init__(self):
-        self.port = "COM4"
+        self.port = "COM5"
         self.serial =  serial.Serial(port=self.port, baudrate=115200, bytesize=serial.EIGHTBITS, parity=serial.PARITY_NONE, stopbits=serial.STOPBITS_ONE, timeout=1)
 
     def initialize(self):

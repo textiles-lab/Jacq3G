@@ -12,9 +12,9 @@ locations = []
 #	locations.append(i)
 #assert(len(locations) == 122)
 
-for i in range(120, 240):
+for i in range(140, 240):
 	locations.append(i)
-assert(len(locations) == 120)
+assert(len(locations) == 100)
 
 if len(sys.argv) != 2:
 	sys.exit('Usage:\n\tsend-pick.py <picks.txt or picks.png>\n If you pass a ".txt" file, each line should looks like \'00110101000101010...00101\', with exactly ' + str(len(locations)) + ' digits in the line.\n If you pass a ".png" file, each row of should have only black or white pixels, with exactly ' + str(len(locations)) + ' pixels in a line.')
@@ -29,22 +29,22 @@ if sys.argv[1].endswith('.txt'):
 				sys.exit("ERROR: file has a line of length " + str(len(pick)) + " -- want all to be " + str(len(locations)))
 			picks.append(pick)
 elif sys.argv[1].endswith('.png'):
-	(width, height, rows, info) = png.Reader(file=open(sys.argv[1], 'rb')).asRGB8()
+	(width, height, rows, info) = png.Reader(file=open(sys.argv[1], 'rb')).asRGBA8()
 	if width != len(locations):
 		sys.exit("ERROR: file has a width of " + str(width) + " -- want width to be " + str(len(locations)))
 	for row in rows:
 		pick = ""
-		for i in range(0,len(row),3):
+		for i in range(0,len(row),4):
 			r = row[i+0]
 			g = row[i+1]
 			b = row[i+2]
 			if r == 0 and g == 0 and b == 0:
 				pick += "0"
-			elif r == 255 and g == 255 and b == 255:
+			elif r >= 125 and g >= 125 and b >= 125:
 				pick += "1"
 			else:
-				sys.exit("ERROR: file contains a pixel with color " + str(r) + ", " + str(g) + ", " + str(b) + " -- want only black and white.")
-		picks.append(pick)
+				pick += "0"
+		picks = [pick] + picks
 else:
 	sys.exit("ERROR: file does not end in '.txt' or '.png'")
 
